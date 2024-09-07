@@ -2,28 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #FCFCFC;
 }
 
 @layer utilities {
@@ -31,3 +11,18 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.hover-spotlight {
+  position: fixed;
+  pointer-events: none;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(173,109,244,0.5), rgba(0,150,255,0.5));
+  opacity: 0.4;
+  filter: blur(80px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -40;
+}
+
