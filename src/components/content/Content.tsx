@@ -13,7 +13,6 @@ export const Content = () => {
         <ContentProjects />
         <ContentSkills />
         <Footer />
-        
     </div>
     
   )

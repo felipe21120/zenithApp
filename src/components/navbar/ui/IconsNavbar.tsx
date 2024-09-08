@@ -46,8 +46,10 @@ export const IconsNavbar = () => {
 
       {/* Icono de Email */}
       <div className="relative group">
-        <IoMail className="h-7 w-7 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
-        <FiArrowUpRight className="h-7 w-7 absolute inset-0 transition-transform transform scale-90 translate-y-1 opacity-0 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 group-hover:duration-300" />
+        <a href="mailto:zennithApp@gmail.com" className="flex items-center">
+          <IoMail className="h-7 w-7 transition-opacity duration-200 opacity-100 group-hover:opacity-0" />
+          <FiArrowUpRight className="h-7 w-7 absolute inset-0 transition-transform transform scale-90 translate-y-1 opacity-0 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 group-hover:duration-300" />
+        </a>
       </div>
 
       {/* Icono de Twitter */}

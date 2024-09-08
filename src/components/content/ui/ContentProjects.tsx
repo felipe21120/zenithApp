@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const ContentProjects: React.FC = () => {
@@ -6,8 +7,14 @@ export const ContentProjects: React.FC = () => {
       <h1 className="font-bold py-8 text-lg">Proyectos</h1>
 
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 border p-4 border-gray-500 rounded-2xl">
-        <div className="flex-shrink-0">
-          <h4 className="font-light text-sm mt-1">Imagen</h4>
+        <div className="flex-shrink-0 flex justify-center items-center">
+          <Image src="/Logo_lechongori-zenith.png"
+          width={100}
+          height={100}
+          alt='Logo-lechongori'
+          
+          />
+          
         </div>
         <div>
           <h2 className="font-semibold text-lg mb-3">Lechongori</h2>

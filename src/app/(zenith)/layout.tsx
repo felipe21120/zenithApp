@@ -17,13 +17,11 @@ export default function RootLayout({
   return (
     <main className="relative min-h-screen overflow-hidden">
 
-
       <div className="fixed inset-0 -z-50 bg-[#122a57]">
-        {/* Círculo de fondo con degradado y z-[-40] para estar detrás del contenido pero sobre el fondo blanco */}
+        
         <div className="absolute top-0 right-0 h-[300px] w-[300px] -translate-x-[240%] translate-y-[70%] rounded-full opacity-50 blur-[80px] z-[-40]"></div>
       </div>
 
-      {/* Contenido con z-[0] o superior */}
       <div className="relative z-0 px-0 sm:px-0 md:px-0 lg:px-20 xl:px-40 lg:pt-16 pb-10">
         {children}
       </div>

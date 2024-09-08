@@ -6,7 +6,7 @@ export const ButtonNavbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('sobre-nosotros');
 
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Evitar problemas en SSR
+    if (typeof window === 'undefined') return; 
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
@@ -62,6 +62,14 @@ export const ButtonNavbar: React.FC = () => {
             onClick={(e) => handleClick(e, 'proyectos')}
           >
             - Proyectos
+          </a>
+        </li>
+        <li className={`transition-transform duration-300 ease-in-out ${activeSection === 'habilidades' ? 'font-black text-lg scale-105' : 'font-light text-base'}`}>
+          <a
+            href="#habilidades"
+            onClick={(e) => handleClick(e, 'habilidades')}
+          >
+            - Habilidades
           </a>
         </li>
       </ul>
