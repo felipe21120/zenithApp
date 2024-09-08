@@ -1,4 +1,4 @@
-import { FaFacebook, FaGithub, FaInstagram, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { FiArrowUpRight } from "react-icons/fi";

@@ -1,6 +1,6 @@
 import { Content, Navbar, Spotlight} from "@/components";
 
-const Home: React.FC = () => {
+export default function Home () {
   return (
     <>
       <div className="flex flex-col lg:flex-row px-6 md:px-10 lg:px-20 pt-0 gap-10">
@@ -16,4 +16,3 @@ const Home: React.FC = () => {
   );
 }
 
-export default Home;
