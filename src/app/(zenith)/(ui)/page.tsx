@@ -1,12 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { Content, Navbar, Title } from "@/components";
+import { Content, Navbar } from "@/components";
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+  
     const handleScroll = () => {
       if (window.scrollY >= window.innerHeight) {
         setShowNavbar(true);
@@ -14,13 +16,14 @@ export default function Home() {
         setShowNavbar(false);
       }
     };
-
+  
     window.addEventListener('scroll', handleScroll);
-
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
 
   return (
     <>

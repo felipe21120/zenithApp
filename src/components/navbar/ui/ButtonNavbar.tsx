@@ -5,19 +5,28 @@ import { useState, useEffect } from 'react';
 export const ButtonNavbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('sobre-nosotros');
 
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY + window.innerHeight / 2;
-    const sections = document.querySelectorAll('section');
+  useEffect(() => {
+    if (typeof window === 'undefined') return; // Evitar problemas en SSR
 
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const sections = document.querySelectorAll('section');
 
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        setActiveSection(section.getAttribute('id') || '');
-      }
-    });
-  };
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveSection(section.getAttribute('id') || '');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     event.preventDefault();
@@ -27,13 +36,6 @@ export const ButtonNavbar: React.FC = () => {
       setActiveSection(targetId);
     }
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <div>
